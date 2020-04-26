@@ -21,11 +21,13 @@ class _TableappState extends State<Tableapp> {
                 coolTextWidget('LastName'),
                 coolTextWidget('Rating')
               ]),
-              TableRow(children: [
-                coolTextWidget('Sergio'),
-                coolTextWidget('Aguero'),
-                coolTextWidget('5')
-              ]),
+              TableRow(
+                  decoration: new BoxDecoration(color: Colors.blue[400]),
+                  children: [
+                    coolTextWidget('Sergio'),
+                    coolTextWidget('Aguero'),
+                    coolTextWidget('5')
+                  ]),
               TableRow(children: [
                 coolTextWidget('Lionel'),
                 coolTextWidget('messi'),
