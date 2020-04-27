@@ -10,10 +10,11 @@ class FutureBuilderapp extends StatefulWidget {
 
 class _FutureBuilderappState extends State<FutureBuilderapp> {
   Future getdataUsers() async {
+    //do <List<Employee>>
     var response = await http.get('https://jsonplaceholder.typicode.com/todos');
     var jsonData = json.decode(response.body);
 
-    List data = [];
+    List data = []; //do <Employee>
 
     for (var u in jsonData) {
       Employee employeData = Employee(u["id"], u["title"], u["completed"]);
