@@ -3,6 +3,30 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
 
+// class FutureComplex extends StatefulWidget {
+//   @override
+//   _FutureComplexState createState() => _FutureComplexState();
+// }
+
+// class _FutureComplexState extends State<FutureComplex> {
+//   List data=[];
+//   Future getdatas() async{
+//     var response= await http.get('https://jsonplaceholder.typicode.com/todos');
+//     var jsondata= json.decode(response.body);
+
+//     for(var u in jsondata){
+//       Employee employeeDatas = Employee(u["id"],u["title"],u["completed"]);
+//     }
+
+//   }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+
+//     );
+//   }
+// }
+
 class FutureBuilderapp extends StatefulWidget {
   @override
   _FutureBuilderappState createState() => _FutureBuilderappState();
@@ -10,7 +34,6 @@ class FutureBuilderapp extends StatefulWidget {
 
 class _FutureBuilderappState extends State<FutureBuilderapp> {
   Future getdataUsers() async {
-    //do <List<Employee>>
     var response = await http.get('https://jsonplaceholder.typicode.com/todos');
     var jsonData = json.decode(response.body);
 
@@ -45,7 +68,7 @@ class _FutureBuilderappState extends State<FutureBuilderapp> {
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
                   //  leading: Text(snapshot.data[index].id),
-                  title: Text(snapshot.data[index]["title"]),
+                  title: Text(snapshot.data[index].title),
                   //   subtitle: Text(snapshot.data[index].body),
                 );
               });
@@ -58,14 +81,6 @@ class _FutureBuilderappState extends State<FutureBuilderapp> {
 class Employee {
   int id;
   String title;
-  String body;
+  bool body;
   Employee(this.id, this.title, this.body);
 }
-
-// http.response respone http.get(uri.encodefull(),headers)
-// list data;
-// setstate{
-//   data=json.decode(response.bod8)
-// }
-
-// initstatege
