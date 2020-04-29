@@ -1,4 +1,5 @@
 import 'package:alertapp/FutureBuilder.dart';
+import 'package:alertapp/coolBookUI.dart';
 import 'package:alertapp/datatable.dart';
 import 'package:alertapp/http.dart';
 import 'package:flutter/material.dart';
@@ -104,6 +105,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return FutureBuilderapp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('Cool UIr'),
+              leading:
+                  Icon(Icons.youtube_searched_for, color: Colors.yellow[800]),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return CoolUIBook();
                 }));
               },
             )
