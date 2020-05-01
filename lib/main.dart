@@ -1,5 +1,6 @@
 import 'package:alertapp/ClipPathAppbar.dart';
 import 'package:alertapp/FutureBuilder.dart';
+import 'package:alertapp/charts.dart';
 import 'package:alertapp/coolBookUI.dart';
 import 'package:alertapp/datatable.dart';
 import 'package:alertapp/http.dart';
@@ -124,13 +125,25 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 15),
             ListTile(
-              title: new Text('Cool Appbars and Gradients'),
+              title: new Text('Cool Appbars ClipPath'),
               leading: Icon(Icons.lightbulb_outline, color: Colors.orange[800]),
               trailing: new Icon(Icons.close),
               onTap: () {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return ClipPathAppBar();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('Charts'),
+              leading: Icon(Icons.pie_chart_outlined, color: Colors.deepPurple),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return ChartApp();
                 }));
               },
             ),
