@@ -4,6 +4,7 @@ import 'package:alertapp/charts.dart';
 import 'package:alertapp/coolBookUI.dart';
 import 'package:alertapp/datatable.dart';
 import 'package:alertapp/http.dart';
+import 'package:alertapp/listviewCluster.dart';
 import 'package:flutter/material.dart';
 import './table.dart';
 
@@ -144,6 +145,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return ChartApp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('ListView Layered'),
+              leading: Icon(Icons.view_array, color: Colors.green[700]),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return ListViewsLayered();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('ListView Nested'),
+              leading: Icon(Icons.view_array, color: Colors.green[700]),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return ListViewNested();
                 }));
               },
             ),

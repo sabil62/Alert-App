@@ -66,6 +66,7 @@ class _TableappState extends State<Tableapp> {
   }
 }
 
+//No need for these only in DataTable
 class Players {
   String firstname;
   String lastname;
