@@ -45,8 +45,6 @@ class _FutureBuilderappState extends State<FutureBuilderapp> {
       data.add(employeData);
     }
     return data; //this is important here
-
-    print(data.length); //not needed
   }
 
   @override

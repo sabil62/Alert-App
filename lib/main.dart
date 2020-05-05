@@ -1,12 +1,14 @@
-import 'package:alertapp/ClipPathAppbar.dart';
-import 'package:alertapp/FutureBuilder.dart';
-import 'package:alertapp/charts.dart';
-import 'package:alertapp/coolBookUI.dart';
-import 'package:alertapp/datatable.dart';
-import 'package:alertapp/http.dart';
-import 'package:alertapp/listviewCluster.dart';
+import 'package:alertapp/files/ClipPathAppbar.dart';
+import 'package:alertapp/files/FutureBuilder.dart';
+import 'package:alertapp/files/charts.dart';
+import 'package:alertapp/files/coolBookUI.dart';
+import 'package:alertapp/files/datatable.dart';
+import 'package:alertapp/files/http.dart';
+import 'package:alertapp/files/listviewCluster.dart';
+import 'package:alertapp/files/mapbox.dart';
 import 'package:flutter/material.dart';
-import './table.dart';
+import './files/table.dart';
+import './files/gradient.dart';
 
 void main() => runApp(MyApp());
 
@@ -169,6 +171,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return ListViewNested();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('MapBOX'),
+              leading: Icon(Icons.map, color: Colors.deepOrangeAccent[700]),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return MapBoxApp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('Gradient Box UI'),
+              leading: Icon(Icons.gradient, color: Colors.deepPurple[700]),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return GradientApp();
                 }));
               },
             ),

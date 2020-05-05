@@ -46,6 +46,7 @@ class _ListViewsLayeredState extends State<ListViewsLayered> {
           ),
           buildContainer(),
           buildContainer(),
+          howMuchRating(4),
         ]));
   }
 
@@ -66,6 +67,17 @@ class _ListViewsLayeredState extends State<ListViewsLayered> {
         ),
       ),
     );
+  }
+
+  Widget howMuchRating(double stars) {
+    return Row(
+        children: List.generate(stars.floor(), (index) {
+      return Icon(
+        Icons.star,
+        color: Colors.amber[400],
+        size: 40,
+      );
+    }));
   }
 }
 
