@@ -3,9 +3,11 @@ import 'package:alertapp/files/FutureBuilder.dart';
 import 'package:alertapp/files/charts.dart';
 import 'package:alertapp/files/coolBookUI.dart';
 import 'package:alertapp/files/datatable.dart';
+import 'package:alertapp/files/forms.dart';
 import 'package:alertapp/files/http.dart';
 import 'package:alertapp/files/listviewCluster.dart';
 import 'package:alertapp/files/mapbox.dart';
+import 'package:alertapp/files/stream.dart';
 import 'package:flutter/material.dart';
 import './files/table.dart';
 import './files/gradient.dart';
@@ -195,6 +197,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return GradientApp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('Form'),
+              leading: Icon(Icons.picture_as_pdf, color: Colors.orange[700]),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return FormApp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('Stream'),
+              leading: Icon(Icons.view_stream, color: Colors.red[700]),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return StreamApp();
                 }));
               },
             ),
