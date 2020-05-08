@@ -9,6 +9,7 @@ import 'package:alertapp/files/http.dart';
 import 'package:alertapp/files/listviewCluster.dart';
 import 'package:alertapp/files/mapbox.dart';
 import 'package:alertapp/files/stream.dart';
+import 'package:alertapp/files/tableAndClipPath.dart';
 import 'package:flutter/material.dart';
 import './files/table.dart';
 import './files/gradient.dart';
@@ -234,6 +235,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return StreamApp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('Appbar Table Combination'),
+              leading: Icon(Icons.stars, color: Colors.orange[700]),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return TableAndClipPathApp();
                 }));
               },
             ),
