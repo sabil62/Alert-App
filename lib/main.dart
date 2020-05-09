@@ -5,6 +5,7 @@ import 'package:alertapp/files/coolBookUI.dart';
 import 'package:alertapp/files/datatable.dart';
 import 'package:alertapp/files/forms.dart';
 import 'package:alertapp/files/googlemap.dart';
+import 'package:alertapp/files/grid.dart';
 import 'package:alertapp/files/http.dart';
 import 'package:alertapp/files/listviewCluster.dart';
 import 'package:alertapp/files/mapbox.dart';
@@ -247,6 +248,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return TableAndClipPathApp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              title: new Text('GridView'),
+              leading: Icon(Icons.android, color: Colors.brown[700]),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return GridViewApp();
                 }));
               },
             ),

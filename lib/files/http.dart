@@ -84,9 +84,12 @@ class ImageShow extends StatelessWidget {
             //         image: new NetworkImage(image), fit: BoxFit.fill)),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(120),
-              child: Image(
-                fit: BoxFit.cover,
-                image: new NetworkImage(image),
+              child: Hero(
+                tag: 'heroAnimation',
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: new NetworkImage(image),
+                ),
               ),
             ),
           ),
