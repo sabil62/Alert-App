@@ -11,6 +11,7 @@ import 'package:alertapp/files/listviewCluster.dart';
 import 'package:alertapp/files/mapbox.dart';
 import 'package:alertapp/files/stream.dart';
 import 'package:alertapp/files/tableAndClipPath.dart';
+import 'package:alertapp/files2/tabComplex.dart';
 import 'package:alertapp/files2/tabMiddle.dart';
 import 'package:alertapp/files2/tabSimple.dart';
 import 'package:flutter/material.dart';
@@ -286,6 +287,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return TabBarMiddleApp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              leading:
+                  new Icon(Icons.remove_shopping_cart, color: Colors.teal[700]),
+              title: new Text('TAB BAR COMPLEX'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return TabBarComplexApp();
                 }));
               },
             ),
