@@ -11,6 +11,7 @@ import 'package:alertapp/files/listviewCluster.dart';
 import 'package:alertapp/files/mapbox.dart';
 import 'package:alertapp/files/stream.dart';
 import 'package:alertapp/files/tableAndClipPath.dart';
+import 'package:alertapp/files2/tabMiddle.dart';
 import 'package:alertapp/files2/tabSimple.dart';
 import 'package:flutter/material.dart';
 import './files/table.dart';
@@ -273,6 +274,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return TabSimpleApp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              leading: new Icon(Icons.traffic, color: Colors.red[600]),
+              title: new Text('TAB MIDDLE'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return TabBarMiddleApp();
                 }));
               },
             ),
