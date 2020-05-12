@@ -11,6 +11,7 @@ import 'package:alertapp/files/listviewCluster.dart';
 import 'package:alertapp/files/mapbox.dart';
 import 'package:alertapp/files/stream.dart';
 import 'package:alertapp/files/tableAndClipPath.dart';
+import 'package:alertapp/files2/greenUI.dart';
 import 'package:alertapp/files2/tabComplex.dart';
 import 'package:alertapp/files2/tabMiddle.dart';
 import 'package:alertapp/files2/tabSimple.dart';
@@ -292,14 +293,30 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 15),
             ListTile(
-              leading:
-                  new Icon(Icons.remove_shopping_cart, color: Colors.teal[700]),
+              leading: new Icon(Icons.remove_shopping_cart,
+                  color: Colors.purple[700]),
               title: new Text('TAB BAR COMPLEX'),
               trailing: new Icon(Icons.close),
               onTap: () {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return TabBarComplexApp();
+                }));
+              },
+            ),
+            SizedBox(height: 15),
+            ListTile(
+              leading: new Icon(
+                Icons.battery_charging_full,
+                color: Colors.greenAccent[700],
+                size: 34,
+              ),
+              title: new Text('Green Covid Tracker UI'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return GreenApp();
                 }));
               },
             ),
