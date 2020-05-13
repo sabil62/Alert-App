@@ -54,7 +54,14 @@ class _GreenAppState extends State<GreenApp> {
                       fontWeight: FontWeight.w700,
                       letterSpacing: 1.5)),
             ),
-            buildThreeImages()
+            buildThreeImages(),
+            SizedBox(height: 20),
+            buildGradientContainer(),
+            Container(
+              height: 50,
+              child: Image.network(
+                  'https://p7.hiclipart.com/preview/871/719/600/triangle-geometry-colorful-diamond-background-vector.jpg'),
+            )
           ],
         ));
   }
@@ -118,7 +125,7 @@ class _GreenAppState extends State<GreenApp> {
                   animate: true,
                   animationDuration: Duration(milliseconds: 2200),
                 ),
-              )
+              ),
             ],
           )),
         ]),
@@ -128,31 +135,92 @@ class _GreenAppState extends State<GreenApp> {
 
   Widget buildThreeImages() {
     return Container(
-      height: 100,
+      height: 130,
       child: GridView.count(crossAxisCount: 3, crossAxisSpacing: 15, children: [
-        buildImagewithCaption(),
-        buildImagewithCaption(),
-        buildImagewithCaption()
+        buildImagewithCaption(
+            'https://friendlystock.com/wp-content/uploads/2020/04/9-nurse-holding-digital-thermometer-cartoon-clipart.jpg',
+            'Check Temperature'),
+        buildImagewithCaption(
+            'https://thumbs.dreamstime.com/b/routine-actions-washing-hands-soap-water-cute-cartoon-illustration-hygiene-little-boy-dark-hair-bathroom-jpg-106217917.jpg',
+            'Wash Hands'),
+        buildImagewithCaption(
+            'https://previews.123rf.com/images/goodstocker/goodstocker1810/goodstocker181000427/110605671-funny-cartoon-guy-wearing-medical-mask-for-respiratory-disease-protection-cartoon-design-icon-colorf.jpg',
+            'Wear Mask')
       ]),
     );
   }
 
-  Widget buildImagewithCaption() {
+  Widget buildImagewithCaption(String image, String prevention) {
     return Container(
-      decoration: BoxDecoration(color: Colors.green[100]),
+      // decoration: BoxDecoration(color: Colors.green[100]),
       child: Column(children: [
         Container(
-          height: 60,
-          child: CircleAvatar(
-            //Better use Decoration Boz and border radius
-            backgroundColor: Colors.red[900],
-          ),
+          height: 70,
+          width: 70,
+          decoration: new BoxDecoration(
+              borderRadius: BorderRadius.circular(120),
+              boxShadow: [BoxShadow(color: Colors.black38, blurRadius: 4)],
+              image: new DecorationImage(
+                  image: NetworkImage(image), fit: BoxFit.fill)),
         ),
         SizedBox(height: 5),
         Center(
-            child: Text('write text',
+            child: Text(prevention,
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)))
       ]),
+    );
+  }
+
+  Widget buildGradientContainer() {
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Container(
+        height: 120,
+        decoration: new BoxDecoration(
+            borderRadius: BorderRadius.circular(24),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black38, blurRadius: 4, offset: Offset(0, 4))
+            ],
+            gradient: new LinearGradient(
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+                colors: [
+                  Colors.blue[50],
+                  Colors.blue[200],
+                ])),
+        child: Row(children: [
+          Image.asset(
+            "assets/geography.png",
+            height: 78,
+            // width: 64,
+          ),
+          SizedBox(width: 20),
+          Container(
+              // height: 120,
+              // decoration: new BoxDecoration(
+              //     borderRadius: BorderRadius.circular(24),
+              //     color: Colors.yellow[50]),
+              child: Center(
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: 20),
+                Text('Dial 5555 for help',
+                    style: TextStyle(
+                        color: Colors.yellow[50],
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600)),
+                SizedBox(height: 10),
+                Text('If only symptoms appear',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 13,
+                    ))
+              ],
+            ),
+          ))
+        ]),
+      ),
     );
   }
 }

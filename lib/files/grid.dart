@@ -30,7 +30,7 @@ class _GridViewAppState extends State<GridViewApp> {
     var col;
     if (index > 10) {
       col = index / 10;
-      print(col);
+      // print(col);
     } else {
       col = index;
     }
