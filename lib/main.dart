@@ -12,6 +12,7 @@ import 'package:alertapp/files/mapbox.dart';
 import 'package:alertapp/files/stream.dart';
 import 'package:alertapp/files/tableAndClipPath.dart';
 import 'package:alertapp/files2/greenUI.dart';
+import 'package:alertapp/files2/greenUIusingTable.dart';
 import 'package:alertapp/files2/tabComplex.dart';
 import 'package:alertapp/files2/tabMiddle.dart';
 import 'package:alertapp/files2/tabSimple.dart';
@@ -317,6 +318,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return GreenApp();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading: Icon(Icons.panorama_horizontal, color: Colors.green),
+              title: new Text('GreenUI with table instead of grid'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return GreenUIfromTable();
                 }));
               },
             ),
