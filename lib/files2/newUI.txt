@@ -1,0 +1,79 @@
+import 'package:flutter/material.dart';
+
+class HttpApp extends StatefulWidget {
+  @override
+  _HttpAppState createState() => _HttpAppState();
+}
+
+class _HttpAppState extends State<HttpApp> {
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: new AppBar(title: new Text('Http data')),
+      body: ListView.builder(
+        itemCount: userdata == null ? 0 : userdata.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            leading: new CircleAvatar(
+                backgroundImage: NetworkImage(userdata[index]["avatar"])),
+            title: new Row(children: [
+              
+           
+              Text(userdata[index][
+                  "last_name"]) 
+            ]),
+          );
+        },
+      ),
+    );
+  }
+}
+
+
+//EITHER USE THIS OR OTHER CLIPPER
+class clipperLowerCircle extends CustomClipper<Path>{
+
+//path.lineTo(0,size.height-15);
+//path.quadraticBezeir(0,size.height,15,size.height);
+//path..lineTo(size.width-15,size.height);
+//path.quadraticBezeir(size.width,size.height,size.width,size.height-15);
+//path.lineTo(size.width,0);
+
+}
+
+class clipperLowerUpCircle extends CustomClipper<Path>{
+path.lineTo(
+//path.lineTo(0,size.height);
+//path.quadraticBezeir(size.width*0.5,size.height-16,size.width,size.height);
+//path.lineTo(size.width,0);
+}
+
+
+//other things
+Scaffold(
+//no need this appBar:AppBar(title:Text('ui')));
+body:ListView(
+children:[
+appBarCool(),
+SizedBox(height:20),
+
+]
+),
+
+Widget appBarCool(){
+return Stack(
+children:[
+ClipPath(
+clipper:clipperLowerCircle(),
+child:Container(
+height:280,
+decoration:new BoxDecoration(
+gradient:new LinearGradient(colors:[Colors.blue[200],Colors.purple])//begin:Alignment.bottomLeft
+
+))
+),
+]);
+}
