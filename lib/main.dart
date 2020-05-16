@@ -13,6 +13,7 @@ import 'package:alertapp/files/stream.dart';
 import 'package:alertapp/files/tableAndClipPath.dart';
 import 'package:alertapp/files2/greenUI.dart';
 import 'package:alertapp/files2/greenUIusingTable.dart';
+import 'package:alertapp/files2/newUI.dart';
 import 'package:alertapp/files2/tabComplex.dart';
 import 'package:alertapp/files2/tabMiddle.dart';
 import 'package:alertapp/files2/tabSimple.dart';
@@ -332,6 +333,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return GreenUIfromTable();
+                }));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.verified_user, color: Colors.purple),
+              title: new Text('New UI CoronaUI'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return NewUiApp();
                 }));
               },
             ),

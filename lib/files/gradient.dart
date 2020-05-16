@@ -32,6 +32,7 @@ class _GradientAppState extends State<GradientApp> {
         children: <Widget>[
           Container(
             height: 150,
+            
             decoration: new BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
                 gradient: LinearGradient(

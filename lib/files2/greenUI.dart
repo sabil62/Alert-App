@@ -1,4 +1,4 @@
-import 'package:alertapp/files2/greenUIusingTable.dart';
+//import 'package:alertapp/files2/greenUIusingTable.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import './simplelinechart.dart' as lineChart;
@@ -138,6 +138,7 @@ Widget buildThreeImages() {
   return Container(
     height: 130,
     child: GridView.count(crossAxisCount: 3, crossAxisSpacing: 15, children: [
+      //Better use table
       buildImagewithCaption(
           'https://friendlystock.com/wp-content/uploads/2020/04/9-nurse-holding-digital-thermometer-cartoon-clipart.jpg',
           'Check Temperature'),
