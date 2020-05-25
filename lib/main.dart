@@ -1,3 +1,4 @@
+import 'package:alertapp/file_neumorphic/neumorphic0.dart';
 import 'package:alertapp/files/ClipPathAppbar.dart';
 import 'package:alertapp/files/FutureBuilder.dart';
 import 'package:alertapp/files/charts.dart';
@@ -336,6 +337,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 }));
               },
             ),
+            SizedBox(
+              height: 15,
+            ),
             ListTile(
               leading: Icon(Icons.verified_user, color: Colors.purple),
               title: new Text('New UI CoronaUI'),
@@ -344,6 +348,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return NewUiApp();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading: Icon(Icons.library_books, color: Colors.yellow[800]),
+              title: new Text('Neumorphic Design'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return Neumorphic0();
                 }));
               },
             ),
