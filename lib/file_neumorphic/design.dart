@@ -86,7 +86,7 @@ class _NeumorphicBoxState extends State<NeumorphicBox> {
                     child: Icon(
                       widget.iconData,
                       size: widget.iconSize,
-                      color: Colors.black.withOpacity(.5),
+                      color: Colors.yellow.withOpacity(.5),
                     ),
                   ));
   }
