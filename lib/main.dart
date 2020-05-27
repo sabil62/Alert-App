@@ -1,5 +1,6 @@
 import 'package:alertapp/file_neumorphic/neumorphic0.dart';
 import 'package:alertapp/file_neumorphic/neumorphic1.dart';
+import 'package:alertapp/file_neumorphic/neumorphic2blue.dart';
 import 'package:alertapp/files/ClipPathAppbar.dart';
 import 'package:alertapp/files/FutureBuilder.dart';
 import 'package:alertapp/files/charts.dart';
@@ -377,6 +378,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return Neurmorphic1App();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading: Icon(Icons.edit_location, color: Colors.purple[800]),
+              title: new Text('Neumorphic 02'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return Neumorphic2App();
                 }));
               },
             ),
