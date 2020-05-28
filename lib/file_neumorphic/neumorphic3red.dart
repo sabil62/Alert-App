@@ -60,42 +60,143 @@ class _Neumorphic3AppState extends State<Neumorphic3App> {
                   child: ispressed == true
                       ? Align(
                           child: Container(
-                              height: 260,
-                              width: 260,
+                              height: 240,
+                              width: 240,
                               decoration: new BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50.0),
+                                  borderRadius: BorderRadius.circular(46.0),
                                   color: Color(0xFFd91f0b),
                                   boxShadow: [
                                     BoxShadow(
-                                        offset: Offset(-20, -20),
+                                        offset: Offset(-30, -30),
                                         blurRadius: 60,
                                         color: Color(0xFFb81a09)),
                                     BoxShadow(
-                                        offset: Offset(20, 20),
+                                        offset: Offset(22, 23),
                                         blurRadius: 60,
                                         color: Color(0xFFfa240d))
                                   ])),
                         )
                       : Align(
                           child: Container(
-                              height: 270,
-                              width: 270,
+                              height: 240,
+                              width: 240,
                               decoration: new BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50.0),
+                                  borderRadius: BorderRadius.circular(46.0),
                                   color: Color(0xFFd91f0b),
                                   boxShadow: [
                                     BoxShadow(
-                                        blurRadius: 60,
-                                        offset: Offset(20, 20),
+                                        blurRadius: 40,
+                                        offset: Offset(30, 30),
                                         color: Color(0xFFb81a09)),
                                     BoxShadow(
-                                        blurRadius: 60,
-                                        offset: Offset(-20, -20),
+                                        blurRadius: 40,
+                                        offset: Offset(-22, -23),
                                         color: Color(0xFFfa240d))
                                   ])),
-                        ))
+                        )),
+              //now another Listener
+              SizedBox(height: 60),
+              Listener(
+                  onPointerUp: createFalse2,
+                  onPointerDown: createTrue2,
+                  child: ispressed2 == false
+                      ? Container(
+                          height: 260,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xFFd91f0b),
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 40,
+                                    offset: Offset(30, 30),
+                                    color: Colors.black.withOpacity(.25)),
+                                BoxShadow(
+                                    blurRadius: 40,
+                                    offset: Offset(-30, -30),
+                                    color: Color(0xFFfa240d))
+                              ]),
+                          child: Padding(
+                            padding: const EdgeInsets.all(46.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFd91f0b),
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                        blurRadius: 42,
+                                        offset: Offset(24, 24),
+                                        color: Colors.black.withOpacity(.3)),
+                                    BoxShadow(
+                                        blurRadius: 42,
+                                        offset: Offset(-20, -20),
+                                        color: Color(0xFFfa240d))
+                                  ]),
+                            ),
+                          ),
+                        )
+                      : Container(
+                          height: 250,
+                          decoration: BoxDecoration(
+                              color: Color(0xFFd91f0b),
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 42,
+                                  offset: Offset(-26, -26),
+                                  color: Color(0xFFb81a09),
+                                ),
+                                BoxShadow(
+                                    blurRadius: 42,
+                                    offset: Offset(26, 26),
+                                    color: Color(0xFFa240d))
+                              ]),
+                        )),
+              SizedBox(height: 155),
+              //Next widget
+              ClipPath(
+                  clipper: DownClipper(),
+                  child: Container(
+                    height: 250,
+                    decoration:
+                        BoxDecoration(color: Colors.red[300], boxShadow: [
+                      BoxShadow(
+                        blurRadius: 42,
+                        offset: Offset(-26, -26),
+                        color: Color(0xFFb81a09),
+                      ),
+                      BoxShadow(
+                          blurRadius: 42,
+                          offset: Offset(26, 26),
+                          color: Color(0xFFa240d))
+                    ]),
+                  ))
             ],
           )),
     );
+  }
+}
+
+class DownClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path(); // the starting point is the 0,0 position of the widget.
+    path.lineTo(0, size.height);
+    path.quadraticBezierTo(
+        size.width * 0.5, size.height * 0.8, size.width, size.height * 0.6);
+    path.lineTo(size.width, 0);
+    // path.lineTo(0,
+    //     size.height); // this draws the line from current point to the left bottom position of widget
+    // path.lineTo(size.width,
+    //     size.height); // this draws the line from current point to the right bottom position of the widget.
+    // path.lineTo(size.width,
+    //     0); // this draws the line from current point to the right top position of the widget
+    // path.close(); // this closes the loop from current position to the starting point of widget
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    // TODO: implement shouldReclip
+    return true;
   }
 }
