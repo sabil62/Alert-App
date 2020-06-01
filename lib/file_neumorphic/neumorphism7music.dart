@@ -71,6 +71,45 @@ class _Neumorphic7AppState extends State<Neumorphic7App> {
     });
   }
 
+  bool ispressed5 = false;
+  void createTrue5(PointerDownEvent event) {
+    setState(() {
+      ispressed5 = true;
+    });
+  }
+
+  void createFalse5(PointerUpEvent event) {
+    setState(() {
+      ispressed5 = false;
+    });
+  }
+
+  bool ispressed6 = false;
+  void createTrue6(PointerDownEvent event) {
+    setState(() {
+      ispressed6 = true;
+    });
+  }
+
+  void createFalse6(PointerUpEvent event) {
+    setState(() {
+      ispressed6 = false;
+    });
+  }
+
+  bool ispressed7 = false;
+  void createTrue7(PointerDownEvent event) {
+    setState(() {
+      ispressed7 = true;
+    });
+  }
+
+  void createFalse7(PointerUpEvent event) {
+    setState(() {
+      ispressed7 = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +120,7 @@ class _Neumorphic7AppState extends State<Neumorphic7App> {
           Text('SKIN - FLUME',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.grey.shade600,
+                color: Colors.black.withOpacity(.5),
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
               )),
@@ -96,13 +135,14 @@ class _Neumorphic7AppState extends State<Neumorphic7App> {
                   buildCircle(createTrue, createFalse, ispressed, 60,
                       Icons.lock_outline),
                   Container(
-                      height: 130,
+                      height: 155,
+                      width: 155,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.grey.shade100,
+                          color: Colors.grey.shade200,
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.01),
+                              color: Colors.black.withOpacity(0.1),
                               offset: Offset(16, 16),
                               blurRadius: 16,
                             ),
@@ -120,16 +160,22 @@ class _Neumorphic7AppState extends State<Neumorphic7App> {
           ),
           buildMusicSection(
               createTrue3, createFalse3, ispressed3, 'Helix', 'Flume'),
-          SizedBox(height: 5),
+          SizedBox(height: 15),
           buildMusicSection(createTrue4, createFalse4, ispressed4,
               'Never Be like you', 'Flume Kai'),
-          SizedBox(height: 5),
+          SizedBox(height: 15),
           buildMusicSection(createTrue2, createFalse2, ispressed2, 'Loose it',
               'Flume ft.kong'),
-          SizedBox(height: 5),
-          buildMusicSection(createTrue3, createFalse3, ispressed3,
+          SizedBox(height: 15),
+          buildMusicSection(createTrue5, createFalse5, ispressed5,
               'Numb & Getting Colder', 'Lion and band'),
-          SizedBox(height: 5),
+          SizedBox(height: 15),
+          buildMusicSection(createTrue6, createFalse6, ispressed6,
+              'Getting & Colder', 'Tiger and band'),
+          SizedBox(height: 15),
+          buildMusicSection(createTrue7, createFalse7, ispressed7,
+              'Colder & Colder', 'Elephant and band'),
+          SizedBox(height: 15),
         ]),
       ),
     );
@@ -146,7 +192,7 @@ class _Neumorphic7AppState extends State<Neumorphic7App> {
       onPointerDown: createTrues,
       child: ispress == false
           ? Container(
-              height: 40,
+              height: 70,
               decoration: BoxDecoration(
                 color: Colors.grey.shade100,
                 borderRadius: BorderRadius.circular(14.0),
@@ -154,94 +200,112 @@ class _Neumorphic7AppState extends State<Neumorphic7App> {
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      children: <Widget>[
-                        Text(text,
-                            style: TextStyle(
-                                color: Colors.grey.shade600,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500)),
-                        Text(text,
-                            style: TextStyle(
-                                color: Colors.grey.shade300,
-                                fontSize: 11,
-                                fontWeight: FontWeight.w400)),
-                      ],
-                    ),
-                    Container(
-                      height: 25,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade100,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.075),
-                            offset: Offset(3, 3),
-                            blurRadius: 3,
-                          ),
-                          BoxShadow(
-                              color: Colors.white,
-                              blurRadius: 3,
-                              offset: Offset(-3, -3))
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Text(text,
+                              style: TextStyle(
+                                  color: Colors.grey.shade600,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500)),
+                          Text(subtext,
+                              style: TextStyle(
+                                  color: Colors.grey.shade400,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400)),
                         ],
                       ),
-                      child: Icon(Icons.play_arrow,
-                          size: 14, color: Colors.grey.shade600),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 4, 24, 4),
+                      child: Container(
+                        height: 54,
+                        width: 54,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.095),
+                              offset: Offset(8, 8),
+                              blurRadius: 8,
+                            ),
+                            BoxShadow(
+                                color: Colors.white,
+                                blurRadius: 8,
+                                offset: Offset(-8, -8))
+                          ],
+                        ),
+                        child: Icon(Icons.play_arrow,
+                            size: 24, color: Colors.grey.shade600),
+                      ),
                     )
                   ]),
             )
           : Container(
-              height: 40,
+              height: 80,
               decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(.075),
+                  color: Colors.black.withOpacity(.095),
                   borderRadius: BorderRadius.circular(14.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.075),
-                      offset: Offset(3, 3),
-                      blurRadius: 3,
-                    ),
-                    BoxShadow(
-                        color: Colors.white,
+                        color: Colors.black.withOpacity(0.075),
+                        offset: Offset(3, 3),
                         blurRadius: 3,
-                        offset: Offset(-3, -3))
+                        spreadRadius: -3),
+                    BoxShadow(
+                      color: Colors.white.withOpacity(.9),
+                      blurRadius: 1,
+                      spreadRadius: -3,
+                      offset: Offset(-3, -3),
+                    )
                   ]),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      children: <Widget>[
-                        Text(text,
-                            style: TextStyle(
-                                color: Colors.grey.shade600,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500)),
-                        Text(text,
-                            style: TextStyle(
-                                color: Colors.grey.shade300,
-                                fontSize: 11,
-                                fontWeight: FontWeight.w400)),
-                      ],
-                    ),
-                    Container(
-                      height: 25,
-                      decoration: BoxDecoration(
-                        color: Colors.blueAccent.shade100,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.075),
-                            offset: Offset(3, 3),
-                            blurRadius: 3,
-                          ),
-                          BoxShadow(
-                              color: Colors.white,
-                              blurRadius: 3,
-                              offset: Offset(-3, -3))
+                    Padding(
+                      padding: const EdgeInsets.all(13.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Text(text,
+                              style: TextStyle(
+                                  color: Colors.grey.shade600,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500)),
+                          Text(subtext,
+                              style: TextStyle(
+                                  color: Colors.grey.shade400,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400)),
                         ],
                       ),
-                      child: Icon(Icons.pause,
-                          size: 14, color: Colors.white.withOpacity(.7)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 4, 24, 4),
+                      child: Container(
+                        height: 54,
+                        width: 54,
+                        decoration: BoxDecoration(
+                          color: Colors.blueAccent.shade100,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.075),
+                              offset: Offset(10, 10),
+                              blurRadius: 10,
+                            ),
+                            BoxShadow(
+                                color: Colors.white,
+                                blurRadius: 10,
+                                offset: Offset(-10, -10))
+                          ],
+                        ),
+                        child: Icon(Icons.pause,
+                            size: 24, color: Colors.white.withOpacity(.7)),
+                      ),
                     )
                   ]),
             ),
@@ -260,6 +324,7 @@ class _Neumorphic7AppState extends State<Neumorphic7App> {
       child: ispress == false
           ? Container(
               height: height1,
+              width: height1,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.grey.shade100,

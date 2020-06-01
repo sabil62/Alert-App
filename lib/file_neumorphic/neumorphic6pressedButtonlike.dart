@@ -68,10 +68,10 @@ Widget buildPressedMyOwn(IconData icondat) {
           borderRadius: BorderRadius.circular(24.0),
           boxShadow: [
             BoxShadow(
-                color: Colors.black.withOpacity(.12),
-                offset: Offset(-10, -10),
-                blurRadius: 10,
-                spreadRadius: -10),
+              color: Colors.black.withOpacity(.12),
+              offset: Offset(-10, -10),
+              blurRadius: 10,
+            ),
             BoxShadow(
                 color: Colors.white,
                 offset: Offset(10, 10),

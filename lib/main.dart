@@ -6,6 +6,7 @@ import 'package:alertapp/file_neumorphic/neumorphic4MusicPlayer.dart';
 
 import 'package:alertapp/file_neumorphic/neumorphic5Container.dart';
 import 'package:alertapp/file_neumorphic/neumorphic6pressedButtonlike.dart';
+import 'package:alertapp/file_neumorphic/neumorphism7music.dart';
 import 'package:alertapp/files/ClipPathAppbar.dart';
 import 'package:alertapp/files/FutureBuilder.dart';
 import 'package:alertapp/files/charts.dart';
@@ -453,6 +454,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return Neumorphic6App();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading: Icon(Icons.ev_station, color: Colors.lime[800]),
+              title: new Text('Neumorphic 07'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return Neumorphic7App();
                 }));
               },
             ),
