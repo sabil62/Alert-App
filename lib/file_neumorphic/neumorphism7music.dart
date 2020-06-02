@@ -140,6 +140,9 @@ class _Neumorphic7AppState extends State<Neumorphic7App> {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.grey.shade200,
+                          image: DecorationImage(
+                              image: AssetImage('assets/avatar.JPG'),
+                              fit: BoxFit.cover),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.1),
