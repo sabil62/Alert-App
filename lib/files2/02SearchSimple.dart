@@ -17,9 +17,11 @@ class _SearchListState extends State<SearchList> {
   Future getdata() async {
     http.Response response =
         await http.get('https://jsonplaceholder.typicode.com/users');
-    List<Employee> employees;
+    //only this war problem
+    var employees = List<Employee>();
     //here no setstate given so return must be there and setstate() should be in initstate()
     data = json.decode(response.body);
+    print(data);
     for (var u in data) {
       employees.add(Employee.fromJson(u));
     }
@@ -53,11 +55,11 @@ class _SearchListState extends State<SearchList> {
                         color: Colors.yellow[50]),
                     child: Column(children: [
                       Text(
-                        empForDisplayWhole[index].name,
+                        empForDisplayWhole[index - 1].name,
                         style: bold,
                       ),
                       Text(
-                        empForDisplayWhole[index].email,
+                        empForDisplayWhole[index - 1].email,
                         style: light,
                       )
                     ]),

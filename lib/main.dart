@@ -22,8 +22,11 @@ import 'package:alertapp/files/mapbox.dart';
 import 'package:alertapp/files/stream.dart';
 import 'package:alertapp/files/tableAndClipPath.dart';
 import 'package:alertapp/files2/01foodApp.dart';
+import 'package:alertapp/files2/02SearchSimple.dart';
+import 'package:alertapp/files2/03SearchComplex.dart';
 import 'package:alertapp/files2/greenUI.dart';
 import 'package:alertapp/files2/greenUIusingTable.dart';
+import 'package:alertapp/files2/heroAnimation.dart';
 import 'package:alertapp/files2/newUI.dart';
 import 'package:alertapp/files2/tabComplex.dart';
 import 'package:alertapp/files2/tabMiddle.dart';
@@ -498,6 +501,48 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return FoodApp();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading: Icon(Icons.pan_tool, color: Colors.yellow[900]),
+              title: new Text('Hero Animation App'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return HeroAnimationApp();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading: Icon(Icons.trip_origin, color: Colors.orange[800]),
+              title: new Text('Search List'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return SearchList();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading: Icon(Icons.pan_tool, color: Colors.orange[900]),
+              title: new Text('Search Complex'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return App();
                 }));
               },
             ),

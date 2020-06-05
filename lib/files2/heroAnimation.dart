@@ -11,21 +11,25 @@ class _HeroAnimationAppState extends State<HeroAnimationApp> {
     return Scaffold(
       appBar: AppBar(title: Text('Hero Animation')),
       body: Column(children: [
-        Container(
-          height: 60,
-          child: Hero(
-            tag: 'lion',
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) {
-                  return HeroAnime();
-                }));
-              },
-              child: Image.asset('assets.simba.png'),
+        Align(
+          child: Container(
+            height: 280,
+            // width: 180,
+            child: Hero(
+              tag: 'lion',
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      new MaterialPageRoute(builder: (context) {
+                    return HeroAnime();
+                  }));
+                },
+                child: Image.asset('assets/simba.png'),
+              ),
             ),
           ),
-        )
+        ),
+        Text('lion', style: TextStyle(fontSize: 36))
       ]),
     );
   }
@@ -36,7 +40,7 @@ class HeroAnime extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Hero(tag: 'lion', child: Image.asset('assets.simba.png'))),
+          child: Hero(tag: 'lion', child: Image.asset('assets/simba.png'))),
     );
   }
 }
