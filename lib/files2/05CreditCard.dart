@@ -9,6 +9,7 @@ class _CreditCardAppState extends State<CreditCardApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300].withOpacity(.85),
       body: ListView(children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
@@ -35,11 +36,104 @@ class _CreditCardAppState extends State<CreditCardApp> {
           ),
         ),
         SizedBox(height: 18),
-        ListView(
-          scrollDirection: Axis.horizontal,
-          children: <Widget>[],
-        )
+        Container(
+          height: 400,
+          width: MediaQuery.of(context).size.width,
+          child: ListView(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              physics: BouncingScrollPhysics(),
+              children: <Widget>[
+                buildCreditCard(),
+                buildCreditCard(),
+                buildCreditCard(),
+              ]),
+        ),
+        SizedBox(height: 12),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          Text('Transactions',
+              style: TextStyle(
+                fontSize: 26,
+                color: Colors.black.withOpacity(.9),
+                fontWeight: FontWeight.w900,
+              )),
+          Icon(
+            Icons.transfer_within_a_station,
+            size: 25,
+            color: Colors.blue[900].withOpacity(.5),
+          )
+        ]),
+        SizedBox(height: 10),
+        Text('Today',
+            style: TextStyle(
+              fontSize: 21,
+              color: Colors.black.withOpacity(.6),
+              fontWeight: FontWeight.w600,
+            )),
+        buildTransactionCard('Apple MacBook', -2135),
+        SizedBox(height: 5),
+        buildTransactionCard('Salary MainJob', 3000),
+        SizedBox(height: 5),
+        Text('Yesterday',
+            style: TextStyle(
+              fontSize: 21,
+              color: Colors.black.withOpacity(.6),
+              fontWeight: FontWeight.w600,
+            )),
+        buildTransactionCard('Apple Iphone 11 max', -1635),
+        SizedBox(height: 5),
+        buildTransactionCard('Salary SideJob', 900),
+        SizedBox(height: 5),
+        buildTransactionCard('Apple TV', -3135),
+        SizedBox(height: 5),
+        buildTransactionCard('Salary MainJob', 3000),
+        SizedBox(height: 5),
       ]),
+    );
+  }
+
+  Widget buildTransactionCard(String name, double amount) {
+    Color transacColor;
+    IconData icons;
+    if (amount > 0) {
+      transacColor = Colors.green;
+      icons = Icons.report_off;
+    } else {
+      transacColor = Colors.red;
+      icons = Icons.report;
+    }
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 14, 8, 14),
+      child: Container(
+        height: 50,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0), color: Colors.white),
+        child: Row(children: [
+          Icon(icons, color: transacColor.withOpacity(.8), size: 32),
+          SizedBox(width: 12),
+          Column(children: [
+            Text(name,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black.withOpacity(.9),
+                  fontWeight: FontWeight.w700,
+                )),
+            Text('Transaction',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black.withOpacity(.5),
+                  fontWeight: FontWeight.w500,
+                )),
+            SizedBox(width: 300),
+            Text(amount.toString(),
+                style: TextStyle(
+                  fontSize: 26,
+                  color: transacColor,
+                  fontWeight: FontWeight.w900,
+                )),
+          ])
+        ]),
+      ),
     );
   }
 
@@ -141,9 +235,39 @@ class _CreditCardAppState extends State<CreditCardApp> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Column(
-                  children: <Widget>[],
+                  children: <Widget>[
+                    Text(
+                      'Lion Bayon',
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white.withOpacity(.5),
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      'Real Lion Bayon',
+                      style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.white.withOpacity(.9),
+                          fontWeight: FontWeight.w900),
+                    ),
+                  ],
                 ),
-                Column(children: []),
+                Column(children: [
+                  Text(
+                    'Express',
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white.withOpacity(.5),
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    '05/20',
+                    style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.white.withOpacity(.9),
+                        fontWeight: FontWeight.w900),
+                  ),
+                ]),
                 Icon(
                   Icons.change_history,
                   size: 36,
@@ -156,8 +280,4 @@ class _CreditCardAppState extends State<CreditCardApp> {
       ),
     );
   }
-}
-
-Widget buildStar() {
-  return Icon(Icons.star, color: Colors.white);
 }
