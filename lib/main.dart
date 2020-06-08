@@ -24,6 +24,8 @@ import 'package:alertapp/files/tableAndClipPath.dart';
 import 'package:alertapp/files2/01foodApp.dart';
 import 'package:alertapp/files2/02SearchSimple.dart';
 import 'package:alertapp/files2/03SearchComplex.dart';
+import 'package:alertapp/files2/05CreditCard.dart';
+import 'package:alertapp/files2/06Calculator.dart';
 import 'package:alertapp/files2/greenUI.dart';
 import 'package:alertapp/files2/greenUIusingTable.dart';
 import 'package:alertapp/files2/heroAnimation.dart';
@@ -543,6 +545,36 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return App();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading:
+                  Icon(Icons.arrow_drop_down_circle, color: Colors.teal[900]),
+              title: new Text('Credit Card App'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return CreditCardApp();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading:
+                  Icon(Icons.stay_current_portrait, color: Colors.green[900]),
+              title: new Text('Calculator'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return CalculatorApp();
                 }));
               },
             ),
