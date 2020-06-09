@@ -26,6 +26,7 @@ import 'package:alertapp/files2/02SearchSimple.dart';
 import 'package:alertapp/files2/03SearchComplex.dart';
 import 'package:alertapp/files2/05CreditCard.dart';
 import 'package:alertapp/files2/06Calculator.dart';
+import 'package:alertapp/files2/07Calculator.dart';
 import 'package:alertapp/files2/greenUI.dart';
 import 'package:alertapp/files2/greenUIusingTable.dart';
 import 'package:alertapp/files2/heroAnimation.dart';
@@ -575,6 +576,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) {
                   return CalculatorApp();
+                }));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              leading: Icon(Icons.dialer_sip, color: Colors.tealAccent[700]),
+              title: new Text('Calculator Real'),
+              trailing: new Icon(Icons.close),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return CalculatorRealApp();
                 }));
               },
             ),
