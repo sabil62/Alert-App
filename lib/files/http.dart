@@ -9,11 +9,13 @@ class HttpApp extends StatefulWidget {
 }
 
 class _HttpAppState extends State<HttpApp> {
-  Map data;
+  Map data; //yo api ma data bitra ko bitra so
   List userdata;
   Future getdata() async {
     http.Response response =
         await http.get('https://reqres.in/api/users?page=1');
+    //https://api.github.com/users/sabil62
+    //https://jsonplaceholder.typicode.com/todos/
     data = json.decode(response.body);
     setState(() {
       userdata = data["data"];
