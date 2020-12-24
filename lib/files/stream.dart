@@ -37,7 +37,7 @@ class _StreamAppState extends State<StreamApp> {
           builder: (context, snapshot) {
             return Center(
               child: Text(
-                snapshot.data["first_name"],
+                snapshot.data,
                 style: TextStyle(fontSize: 42, fontWeight: FontWeight.w800),
               ),
             );
@@ -45,12 +45,12 @@ class _StreamAppState extends State<StreamApp> {
     );
   }
 
-  List datas = ['apple', 'ball', 'cat', 'dog', 'fire'];
+//  List datas = ['apple', 'ball', 'cat', 'dog', 'fire'];
 
   Stream streamData() async* {
     for (var i = 0; i < userdata.length; i++) {
       await Future.delayed(Duration(milliseconds: 1000));
-      yield userdata[i];
+      yield userdata[i]["first_name"];
     }
   }
 }
